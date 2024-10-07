@@ -1,16 +1,32 @@
-# shed
+# Shad
 
-A new Flutter project.
+![Shad Logo](https://github.com/DrkXo/shed/blob/main/assets/logo/shed.png)
 
-## Getting Started
+## Overview
+**Shad** is a download manager powered by **aria2c**, built with **Flutter** and managed through **Riverpod** for state management. Shad is designed to provide fast and reliable downloading, along with essential controls like pause, resume, and settings management.
 
-This project is a starting point for a Flutter application.
+## Features
+- Start, pause, and resume downloads
+- Manage download settings and configurations
+- Powered by **aria2c RPC** for efficient downloading
 
-A few resources to get you started if this is your first Flutter project:
+## Technologies Used
+- **Flutter**: For building the cross-platform app.
+- **aria2c RPC**: To handle downloads and processes.
+- **Riverpod**: For state management.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Installation
+The project is still under development. Installation instructions will be available soon.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Usage
+Detailed usage instructions are under development and will be provided once the app reaches a stable release.
+
+## Acknowledgments
+- **Rémi Rousselet** for creating **Provider** and **Riverpod**.
+
+## License
+[MIT License](LICENSE)
+
+---
+
+This project is currently under active development. Stay tuned for updates!
