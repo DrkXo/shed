@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shed/src/router/routes.dart';
+import 'package:window_manager/window_manager.dart';
 
 class ScaffoldWithNavBar extends ConsumerStatefulWidget {
   /// Constructs an [ScaffoldWithNavBar].
@@ -28,51 +29,53 @@ class _ScaffoldWithNavBarState extends ConsumerState<ScaffoldWithNavBar> {
       body: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          NavigationRail(
-            selectedIndex: selectedIndex,
-            extended: expanded,
-            useIndicator: false,
-            trailing: Expanded(
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    bottom: 8.0,
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const [],
+          DragToMoveArea(
+            child: NavigationRail(
+              selectedIndex: selectedIndex,
+              extended: expanded,
+              useIndicator: false,
+              trailing: Expanded(
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                      bottom: 8.0,
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: const [],
+                    ),
                   ),
                 ),
               ),
-            ),
-            destinations: const <NavigationRailDestination>[
-              NavigationRailDestination(
-                icon: Icon(Icons.home),
-                label: Text("Home"),
-              ),
-              NavigationRailDestination(
-                icon: Icon(Icons.settings),
-                label: Text("Settings"),
-              ),
-            ],
-            onDestinationSelected: (value) {
-              // logger.i('$selectedIndex  $value');
-              if (value != selectedIndex) {
-                selectedIndex = value;
+              destinations: const <NavigationRailDestination>[
+                NavigationRailDestination(
+                  icon: Icon(Icons.home),
+                  label: Text("Home"),
+                ),
+                NavigationRailDestination(
+                  icon: Icon(Icons.settings),
+                  label: Text("Settings"),
+                ),
+              ],
+              onDestinationSelected: (value) {
+                // logger.i('$selectedIndex  $value');
+                if (value != selectedIndex) {
+                  selectedIndex = value;
 
-                switch (value) {
-                  case 0:
-                    context.goNamed(Routes.downloads.name);
-                    break;
-                  case 1:
-                    context.goNamed(Routes.settings.name);
-                    break;
+                  switch (value) {
+                    case 0:
+                      context.goNamed(Routes.downloads.name);
+                      break;
+                    case 1:
+                      context.goNamed(Routes.settings.name);
+                      break;
+                  }
+                  setState(() {});
                 }
-                setState(() {});
-              }
-            },
+              },
+            ),
           ),
           Expanded(
             flex: 5,

@@ -165,6 +165,20 @@ final trayServiceProvider =
 );
 
 typedef TrayServiceRef = AutoDisposeFutureProviderRef<TrayManagerService>;
+String _$shedThemeHash() => r'57741cca9e1aaa7fc882df34968e8c10a6335110';
+
+/// See also [shedTheme].
+@ProviderFor(shedTheme)
+final shedThemeProvider = AutoDisposeFutureProvider<ShedThemeConfig>.internal(
+  shedTheme,
+  name: r'shedThemeProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$shedThemeHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef ShedThemeRef = AutoDisposeFutureProviderRef<ShedThemeConfig>;
 String _$aria2cRpcServerHash() => r'9e2f4e63e0580998ba72ae64eb5760187f4d1ed2';
 
 /// See also [Aria2cRpcServer].

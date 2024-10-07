@@ -1,6 +1,180 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-// Fictitious brand color.
-const _brandBlue = Color(
-  0xFF1E88E5,
-);
+final fontFamily = GoogleFonts.poppins().fontFamily;
+
+class ShedThemeConfig {
+  final _themeData = _ShedThemeData();
+
+  ThemeMode themeMode = ThemeMode.light;
+  ShedThemeConfig({
+    ThemeMode? themeMode,
+  });
+
+  ThemeData get lightTheme => _themeData.lightTheme;
+  ThemeData get darkTheme => _themeData.darkTheme;
+
+  ShedThemeConfig copyWith({
+    ThemeMode? themeMode,
+  }) {
+    return ShedThemeConfig(
+      themeMode: themeMode ?? this.themeMode,
+    );
+  }
+}
+
+class _ShedThemeData {
+  final lightTheme = FlexThemeData.light(
+    colors: const FlexSchemeColor(
+      primary: Color(0xff222831),
+      primaryContainer: Color(0xffeeeeee),
+      secondary: Color(0xff31363f),
+      secondaryContainer: Color(0xffeeeeee),
+      tertiary: Color(0xff697565),
+      tertiaryContainer: Color(0xffeeeeee),
+      appBarColor: Color(0xffeeeeee),
+      error: Color(0xffb00020),
+    ),
+    surfaceMode: FlexSurfaceMode.level,
+    blendLevel: 1,
+    appBarStyle: FlexAppBarStyle.background,
+    bottomAppBarElevation: 2.0,
+    subThemesData: const FlexSubThemesData(
+      blendOnLevel: 6,
+      blendOnColors: false,
+      useTextTheme: true,
+      adaptiveSplash: FlexAdaptive.all(),
+      splashTypeAdaptive: FlexSplashType.defaultSplash,
+      adaptiveRadius: FlexAdaptive.all(),
+      defaultRadiusAdaptive: 10.0,
+      elevatedButtonSchemeColor: SchemeColor.onPrimaryContainer,
+      elevatedButtonSecondarySchemeColor: SchemeColor.primaryContainer,
+      outlinedButtonOutlineSchemeColor: SchemeColor.primary,
+      toggleButtonsBorderSchemeColor: SchemeColor.primary,
+      segmentedButtonSchemeColor: SchemeColor.primary,
+      segmentedButtonBorderSchemeColor: SchemeColor.primary,
+      unselectedToggleIsColored: true,
+      sliderValueTinted: true,
+      inputDecoratorSchemeColor: SchemeColor.primary,
+      inputDecoratorBackgroundAlpha: 19,
+      inputDecoratorUnfocusedHasBorder: false,
+      inputDecoratorFocusedBorderWidth: 1.0,
+      inputDecoratorPrefixIconSchemeColor: SchemeColor.primary,
+      fabUseShape: true,
+      fabRadius: 5.0,
+      fabSchemeColor: SchemeColor.tertiary,
+      chipRadius: 5.0,
+      cardRadius: 14.0,
+      popupMenuRadius: 6.0,
+      popupMenuElevation: 3.0,
+      alignedDropdown: true,
+      dialogRadius: 18.0,
+      useInputDecoratorThemeInDialogs: true,
+      appBarScrolledUnderElevation: 1.0,
+      drawerElevation: 1.0,
+      drawerIndicatorSchemeColor: SchemeColor.primary,
+      bottomSheetRadius: 18.0,
+      bottomSheetElevation: 2.0,
+      bottomSheetModalElevation: 4.0,
+      menuRadius: 6.0,
+      menuElevation: 3.0,
+      menuBarRadius: 0.0,
+      menuBarElevation: 1.0,
+      menuBarShadowColor: Color(0x00000000),
+      navigationBarSelectedLabelSchemeColor: SchemeColor.primary,
+      navigationBarMutedUnselectedLabel: false,
+      navigationBarSelectedIconSchemeColor: SchemeColor.onPrimary,
+      navigationBarMutedUnselectedIcon: false,
+      navigationBarIndicatorSchemeColor: SchemeColor.primary,
+      navigationBarIndicatorOpacity: 1.00,
+      navigationBarElevation: 1.0,
+      navigationRailSelectedLabelSchemeColor: SchemeColor.primary,
+      navigationRailSelectedIconSchemeColor: SchemeColor.onPrimary,
+      navigationRailIndicatorSchemeColor: SchemeColor.primary,
+      navigationRailIndicatorOpacity: 1.00,
+      navigationRailIndicatorRadius: 5.0,
+      navigationRailBackgroundSchemeColor: SchemeColor.surface,
+    ),
+    useMaterial3ErrorColors: true,
+    visualDensity: FlexColorScheme.comfortablePlatformDensity,
+    useMaterial3: false,
+    fontFamily: fontFamily,
+  );
+  final darkTheme = FlexThemeData.dark(
+    colors: const FlexSchemeColor(
+      primary: Color(0xffeeeeee),
+      primaryContainer: Color(0xffeeeeee),
+      secondary: Color(0xffeeeeee),
+      secondaryContainer: Color(0xffeeeeee),
+      tertiary: Color(0xffeeeeee),
+      tertiaryContainer: Color(0xffeeeeee),
+      appBarColor: Color(0xffeeeeee),
+      error: Color(0xffcf6679),
+    ),
+    surfaceMode: FlexSurfaceMode.level,
+    blendLevel: 2,
+    appBarStyle: FlexAppBarStyle.background,
+    bottomAppBarElevation: 2.0,
+    subThemesData: const FlexSubThemesData(
+      blendOnLevel: 8,
+      useTextTheme: true,
+      adaptiveSplash: FlexAdaptive.all(),
+      splashTypeAdaptive: FlexSplashType.defaultSplash,
+      adaptiveRadius: FlexAdaptive.all(),
+      defaultRadiusAdaptive: 10.0,
+      elevatedButtonSchemeColor: SchemeColor.onPrimaryContainer,
+      elevatedButtonSecondarySchemeColor: SchemeColor.primaryContainer,
+      outlinedButtonOutlineSchemeColor: SchemeColor.primary,
+      toggleButtonsBorderSchemeColor: SchemeColor.primary,
+      segmentedButtonSchemeColor: SchemeColor.primary,
+      segmentedButtonBorderSchemeColor: SchemeColor.primary,
+      unselectedToggleIsColored: true,
+      sliderValueTinted: true,
+      inputDecoratorSchemeColor: SchemeColor.primary,
+      inputDecoratorBackgroundAlpha: 22,
+      inputDecoratorUnfocusedHasBorder: false,
+      inputDecoratorFocusedBorderWidth: 1.0,
+      inputDecoratorPrefixIconSchemeColor: SchemeColor.primary,
+      fabUseShape: true,
+      fabRadius: 5.0,
+      fabSchemeColor: SchemeColor.tertiary,
+      chipRadius: 5.0,
+      cardRadius: 14.0,
+      popupMenuRadius: 6.0,
+      popupMenuElevation: 3.0,
+      alignedDropdown: true,
+      dialogRadius: 18.0,
+      useInputDecoratorThemeInDialogs: true,
+      appBarScrolledUnderElevation: 3.0,
+      drawerElevation: 1.0,
+      drawerIndicatorSchemeColor: SchemeColor.primary,
+      bottomSheetRadius: 18.0,
+      bottomSheetElevation: 2.0,
+      bottomSheetModalElevation: 4.0,
+      menuRadius: 6.0,
+      menuElevation: 3.0,
+      menuBarRadius: 0.0,
+      menuBarElevation: 1.0,
+      menuBarShadowColor: Color(0x00000000),
+      navigationBarSelectedLabelSchemeColor: SchemeColor.primary,
+      navigationBarMutedUnselectedLabel: false,
+      navigationBarSelectedIconSchemeColor: SchemeColor.onPrimary,
+      navigationBarMutedUnselectedIcon: false,
+      navigationBarIndicatorSchemeColor: SchemeColor.primary,
+      navigationBarIndicatorOpacity: 1.00,
+      navigationBarElevation: 1.0,
+      navigationRailSelectedLabelSchemeColor: SchemeColor.primary,
+      navigationRailSelectedIconSchemeColor: SchemeColor.onPrimary,
+      navigationRailIndicatorSchemeColor: SchemeColor.primary,
+      navigationRailIndicatorOpacity: 1.00,
+      navigationRailIndicatorRadius: 5.0,
+      navigationRailBackgroundSchemeColor: SchemeColor.surface,
+    ),
+    useMaterial3ErrorColors: true,
+    visualDensity: FlexColorScheme.comfortablePlatformDensity,
+    useMaterial3: false,
+    fontFamily: fontFamily,
+  );
+}

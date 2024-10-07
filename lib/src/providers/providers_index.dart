@@ -12,6 +12,7 @@ import 'package:shed/server/models/aria2c_server_config.dart';
 import 'package:shed/src/services/notification_service.dart';
 import 'package:shed/src/services/shared_preferences_service.dart';
 import 'package:shed/src/services/tray_service.dart';
+import 'package:shed/src/theme/theme.dart';
 import 'package:shed/src/utils/logger.dart';
 import 'package:shed/src/utils/provider_pinger.dart';
 
@@ -27,3 +28,4 @@ part "notification_provider.dart";
 part 'providers_index.g.dart';
 part 'shared_pref_provider.dart';
 part "tray_service_provider.dart";
+part "theme_provider.dart";
