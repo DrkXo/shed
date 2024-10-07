@@ -1,0 +1,29 @@
+import 'dart:async';
+
+import 'package:aria2cf/aria2cf.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:equatable/equatable.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:process/process.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:shed/constants/constants.dart';
+import 'package:shed/server/aria2c_rpc_service.dart';
+import 'package:shed/server/models/aria2c_server_config.dart';
+import 'package:shed/src/services/notification_service.dart';
+import 'package:shed/src/services/shared_preferences_service.dart';
+import 'package:shed/src/services/tray_service.dart';
+import 'package:shed/src/utils/logger.dart';
+import 'package:shed/src/utils/provider_pinger.dart';
+
+part "aria2c/aria2c_global_stat_provider.dart";
+part 'aria2c/aria2c_rpc_server_provider.dart';
+part 'aria2c/aria2c_server_config_provider.dart';
+part 'aria2c/aria2c_socket_provider.dart';
+part "aria2c/aria2c_tasks_provider.dart";
+part "aria2c/aria2c_version_provider.dart";
+part "connectivity_service_provider.dart";
+part "init_providers.dart";
+part "notification_provider.dart";
+part 'providers_index.g.dart';
+part 'shared_pref_provider.dart';
+part "tray_service_provider.dart";
